@@ -1,4 +1,5 @@
 # excel-revert
+Download pre-built executable in [releases](https://github.com/anthonybu/excel-revert/releases)
 
 **TL;DR** Use this tool to revert sort excel content without manually adding index column. Support convert single file or batch a given folder. Output will be saved in the "reverted" subdirectory with the same file name.
 
