@@ -1,4 +1,5 @@
 import sys
+import platform
 from os import listdir, path, makedirs
 import openpyxl
 
@@ -37,15 +38,18 @@ else:
     print('Which file(s) to convert?\nYou can drag a file or a folder to the program.')
 
 if source_files:
+    source_files = [file for file in source_files if file.endswith(('.xlsx', '.xlsm', '.xltx', '.xltm'))]
     print('Found {} file(s) to be processed in: {}\n'.format(len(source_files), source_path))
-    choice = input("Would you like to covert these files to reversed order? [Y/N]").lower()
+    choice = input("Would you like to covert these files to reversed order? [Y/N]").lower() if platform.system() == 'Windows' else 'y'
     if choice in ('yes', 'y', ''):
-        output_path = source_path + '\\reverted'
+        output_path = path.join(source_path, 'reverted')
         if not path.exists(output_path):
             makedirs(output_path)
         for f in source_files:
             revert_excel(f, output_path)
+        print('\nOperation completed.')
     else:
-        print('Operation aborted by user.')
+        print('\nOperation aborted by user.')
 
-input('\n\nPress Enter to exit')
+if platform.system() == 'Windows'
+    input('\n\nPress Enter to exit')
