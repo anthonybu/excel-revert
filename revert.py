@@ -51,5 +51,5 @@ if source_files:
     else:
         print('\nOperation aborted by user.')
 
-if platform.system() == 'Windows'
+if platform.system() == 'Windows':
     input('\n\nPress Enter to exit')
